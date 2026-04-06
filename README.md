@@ -40,8 +40,8 @@ WHERE query_name LIKE '%openai%' OR query_name LIKE '%googleapis%'
 ORDER BY query_timestamp DESC;
 
 ## Evidence of Effectiveness (Screenshots)
-1. Detection: Athena Query Results
-This screenshot shows attempts to reach unauthorized AI domains.
+1. Detection 
+This Athena Query Results screenshot shows attempts to reach unauthorized AI domains.
 <img width="1912" height="978" alt="Athena queries result" src="https://github.com/user-attachments/assets/9b429f3c-f1ea-4261-bc8f-cd3873bb113b" />
 2. Alerting: Real-time SNS Notification
 This screenshot confirms the GRC team received an email alert within 2 minutes of the unauthorized activity.
