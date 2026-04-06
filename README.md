@@ -1,7 +1,7 @@
 # Automated Shadow AI Discovery & Governance Lab (AWS)
 
 ## Executive Summary
-As organizations rapidly adopt Generative AI, "Shadow AI"—the unauthorized use of AI services—poses a significant risk to data privacy and intellectual property. This project demonstrates a technical implementation of a Continuous Monitoring Control in AWS. 
+As organizations rapidly adopt Generative AI, "Shadow AI", the unauthorized use of AI services—poses a significant risk to data privacy and intellectual property. This project demonstrates a technical implementation of a Continuous Monitoring Control in AWS. 
 By simulating unauthorized AI traffic via Docker, I engineered a serverless detection pipeline that identifies unvetted AI API calls (OpenAI, Gemini, etc.) and triggers real-time alerts for GRC oversight.
 
 ## Governance & Compliance Mapping
