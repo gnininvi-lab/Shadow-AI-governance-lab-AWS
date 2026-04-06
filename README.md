@@ -7,13 +7,12 @@ By simulating unauthorized AI traffic via Docker, I engineered a serverless dete
 ## Governance & Compliance Mapping
 This lab operationalizes key controls within global AI and Security frameworks:
 
-| Data Classification | Public AI (e.g., ChatGPT Free) | Enterprise AI (e.g., Github Copilot)            |
-|---------------------|--------------------------------|-------------------------------------------------|
-| Public Information  | Allowed                        | Allowed                                         |
-| Internal Only       | Prohibited                     | Allowed                                         |
-| Confidential/PII    | Strictly Prohibited            | Restricted (Requires Privacy Impact Assessment) |
-| Source Code         | Strictly Prohibited            | Allowed (Enterprise Version Only)               |
-
+ Technical Control        | Framework Alignment   | Requirement                              |
+|--------------------------|-----------------------|------------------------------------------|
+| Route 53 Logging         | ISO 27001:2022 A.8.15 | Logging and Monitoring                   |
+| CloudWatch Alarms        | NIST CSF DE.AE-2      | Detecting anomalies and events           |
+| Athena SQL Queries       | SOC 2 CC6.6           | Monitoring for unauthorized access/tools |
+| AI Acceptable Use Policy | ISO 42001 Clause 5.2  | Establishing AI Policy                   |
 
 ## Technical Architecture
 The solution utilizes a "Defense in Depth" approach to monitor outbound network traffic:
