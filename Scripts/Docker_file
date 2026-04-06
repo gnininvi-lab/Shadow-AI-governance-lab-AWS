@@ -1,3 +1,4 @@
+# This creates a lightweight container that has the tools necessary to generate the "Shadow AI" DNS traffic you are trying to detect.
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
