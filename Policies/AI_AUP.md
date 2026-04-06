@@ -25,12 +25,13 @@ The Governance, Risk and Compliance ("GRC") team has developed a "Whitelist" of 
 - Unauthorized ("Shadow AI"): Personal OpenAI Accounts; Unverified Browser Extensions; 
 
 ## 5. Monitoring and Enforcement
-In line with ISO 27001:2022 A.8.15, our organisation will perform automated continuous monitoring (detection) to identify any unapproved AI API calls.
+In line with ISO 27001:2022 A.8.15, our organisation will perform automated continuous monitoring (detection) to identify any unapproved AI API calls. This is accomplished through: 
 - Detection: DNS Request Logging with Route 53.
 - Alerting: CloudWatch Alarms will generate real-time alerts for AI access to unapproved domains.
-- Consequences: Any non-compliance with this Policy may result in access being revoked and/or potential disciplinary action.
 
-6. Prohibited Activities
+Any non-compliance with this Policy may result in access being revoked and/or potential disciplinary action.
+
+## 6. Prohibited Activities
 - Prompt Injection - Attempting to circumvent the safety filters of AI systems.
 - Automated Exfiltration - Using automated means (such as scripts or Docker containers) for the systematic exfiltration of company data to unapproved AI systems.
 - Shadow AI - Deploying AI models in an operational capacity without conducting a Formal Risk Assessment.
