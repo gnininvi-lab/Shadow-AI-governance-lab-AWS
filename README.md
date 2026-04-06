@@ -6,19 +6,23 @@ By simulating unauthorized AI traffic via Docker, I engineered a serverless dete
 
 ## Governance & Compliance Mapping
 This lab operationalizes key controls within global AI and Security frameworks:
-Control Area                  AWS Implementation                 Framework Alignment 
-AI Policy Enforcement         Route 53 Resolver Logs             ISO 42001:2023 (Clause 5.2) 
-Continuous Monitoring         CloudWatch Metric Filters          NIST CSF 2.0 (PR.DS-11) 
-Audit Logging Amazon           S3 + Athena                       SOC 2 Type II (CC6.6 / CC7.1) 
+
+| Data Classification | Public AI (e.g., ChatGPT Free) | Enterprise AI (e.g., Github Copilot)            |
+|---------------------|--------------------------------|-------------------------------------------------|
+| Public Information  | Allowed                        | Allowed                                         |
+| Internal Only       | Prohibited                     | Allowed                                         |
+| Confidential/PII    | Strictly Prohibited            | Restricted (Requires Privacy Impact Assessment) |
+| Source Code         | Strictly Prohibited            | Allowed (Enterprise Version Only)               |
+
 
 ## Technical Architecture
 The solution utilizes a "Defense in Depth" approach to monitor outbound network traffic:
 
-1. Simulation Layer:A Dockerized Alpine Linux container running on EC2 acts as a "Shadow AI" user, periodically pinging AI endpoints.
-2. Ingestion Layer:Route 53 Resolver Query Logging - captures every DNS request within the VPC.
+1. Simulation Layer: A Dockerized Alpine Linux container running on EC2 acts as a "Shadow AI" user, periodically pinging AI endpoints.
+2. Ingestion Layer: Route 53 Resolver Query Logging - captures every DNS request within the VPC.
 3. Storage Layer: Logs are archived in Amazon S3 for long-term audit retention and compliance.
 4. Analysis Layer: Amazon Athena provides a SQL interface to query raw JSON logs for unauthorized domain access.
-5. Alerting Layer:** CloudWatch Logs + Metric Filters scan for patterns and trigger SNS notifications to the GRC team within <2 minutes of detection.
+5. Alerting Layer: CloudWatch Logs + Metric Filters scan for patterns and trigger SNS notifications to the GRC team within <2 minutes of detection.
 
 ## Lab Execution & Simulation
 
