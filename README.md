@@ -29,7 +29,7 @@ The solution utilizes a "Defense in Depth" approach to monitor outbound network 
 I deployed a synthetic user inside a Docker container to validate the control with periodic DNS pings to simulate unauthorized LLM usage:
 
 while true;do wget --spider https://api.openai.com/v1/models; wget --spider https://generativelanguage.googleapis.com/v1/models;
-sleep 60
+sleep 60;
 done
 
 2. Audit Evidence (Athena SQL)
