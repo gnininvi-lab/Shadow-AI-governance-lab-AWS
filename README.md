@@ -45,8 +45,11 @@ This screenshot confirms the GRC team received an email alert within 2 minutes o
 
 ## Repository Contents
 /Scripts: Dockerfile and scripts used to generate test traffic.
+
 /policies: A sample AI Acceptable Use Policy (AUP) governing organizational AI usage.
+
 /Athena_queries: SQL DDL and DML for Amazon Athena.
+
 /evidence: Visual proof of control effectiveness for audit purposes.
 
 ## GRC Wins
