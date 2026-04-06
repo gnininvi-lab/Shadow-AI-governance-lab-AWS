@@ -13,13 +13,13 @@ The AUP applies to everyone that has authorized access to the organization's res
 ## 3. Data Classification & Usage
 To ensure compliance with SOC 2 and ISO 42001, data must be handled according to the following matrix:
 
-Data Classification	    Public AI (e.g., ChatGPT Free)	    Enterprise AI (e.g., AWS Bedrock)	
-Public Information	            Allowed	                                Allowed	
-Internal Only	                Prohibited	                              Allowed	
-Confidential/PII	        Strictly Prohibited	                      Restricted (Requires Privacy Impact Assessment)	
-Source Code	              Strictly Prohibited	                      Allowed (Enterprise Version Only)
+| Data Classification | Public AI (e.g., ChatGPT Free) | Enterprise AI (e.g., Github Copilot)            |
+|---------------------|--------------------------------|-------------------------------------------------|
+| Public Information  | Allowed                        | Allowed                                         |
+| Internal Only       | Prohibited                     | Allowed                                         |
+| Confidential/PII    | Strictly Prohibited            | Restricted (Requires Privacy Impact Assessment) |
+| Source Code         | Strictly Prohibited            | Allowed (Enterprise Version Only)               |
 
-## 4. Approved vs. Unauthorized AI Services
 The Governance, Risk and Compliance ("GRC") team has developed a "Whitelist" of acceptable AI services.
 - Approved: Company-provided GitHub Copilot (Enterprise version).
 - Unauthorized ("Shadow AI"): Personal OpenAI Accounts; Unverified Browser Extensions; 
