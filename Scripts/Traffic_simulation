@@ -1,0 +1,2 @@
+# This mimics a "Shadow AI" user by periodically hitting the APIs I have set up in Athena and CloudWatch filters.
+docker run -d --name shadow-ai-app alpine sh -c "while true; do wget --spider https://api.openai.com/v1/models; wget --spider https://generativelanguage.googleapis.com/v1/models; sleep 60; done"
