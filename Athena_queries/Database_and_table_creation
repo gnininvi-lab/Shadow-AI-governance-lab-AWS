@@ -1,0 +1,26 @@
+# Creating the Athena table helps you build a "Search Engine" for your network logs.
+
+#Database creation
+CREATE DATABASE shadow_ai_discovery;
+
+# Table creation
+CREATE EXTERNAL TABLE IF NOT EXISTS `shadow_ai_discovery`.`r53_query_logs` (
+  `version` string,
+  `account_id` string,
+  `region` string,
+  `vpc_id` string,
+  `query_timestamp` string,
+  `query_name` string,
+  `query_type` string,
+  `query_class` string,
+  `rcode` string,
+  `answers` array<struct<Rdata:string,Type:string,Class:string>>,
+  `srcaddr` string,
+  `srcport` int,
+  `transport` string,
+  `srcids` struct<instance:string,resolver_endpoint:string>
+)
+ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION 's3://YOUR-BUCKET-NAME/AWSLogs/YOUR_ACCOUNT_ID/Route53Resolver/YOUR_REGION/';
